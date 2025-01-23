@@ -1,0 +1,25 @@
+# Routing in Next.js 13
+
+## Overview
+Next.js 13 uses a file-based routing system, where the structure of the files and folders in the `app` directory determines the routes of the application. Each file corresponds to a specific route, and the exported components from these files define the behavior for those routes.
+
+## How Routing Works
+
+1. **File-Based Routing**:
+   - Each file in the `app` directory corresponds to a route. For example, `app/about.tsx` maps to the `/about` route.
+   - Nested folders create nested routes. For example, `app/blog/index.tsx` maps to `/blog`, and `app/blog/[id].tsx` maps to dynamic routes like `/blog/1`, `/blog/2`, etc.
+
+2. **Dynamic Routing**:
+   - Dynamic routes are created using square brackets. For example, `app/products/[id].tsx` allows for routes like `/products/1`, where `id` is a dynamic parameter.
+
+3. **API Routes**:
+   - API routes can be defined in the `pages/api` directory. Each file corresponds to an API endpoint. For example, `pages/api/users.ts` maps to the `/api/users` endpoint.
+
+4. **Linking Between Pages**:
+   - The `Link` component from `next/link` is used to navigate between pages, prefetching the linked page for faster navigation.
+
+5. **Custom Server**:
+   - A custom server can be created for more control over routing behavior, although Next.js handles routing automatically.
+
+## Conclusion
+This routing mechanism allows for a clear and organized way to manage the application's structure and behavior based on the file system, making it easy to create and maintain routes in a Next.js application.
